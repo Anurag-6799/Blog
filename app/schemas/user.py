@@ -6,8 +6,8 @@ class UserCreate(BaseModel):
     password: str = Field(...,min_length = 6, max_length=12, description="Password must be between 6 to 12 characters")
 
 class UserResponse(BaseModel):
-    id: int
-    username: str
+    user_id: str
+    user_name: str
     email: EmailStr
 
     class Config:

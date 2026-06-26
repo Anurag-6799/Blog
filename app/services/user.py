@@ -12,7 +12,7 @@ def get_password_hash(password: str) -> str:
 
 def create_user(db: Session, user: UserCreate):
     existing_user = db.query(User).filter(
-        (User.email == user.email) | (User.username == user.username)
+        (User.email == user.email) | (User.user_name == user.user_name)
     ).first()
     
     if existing_user:
@@ -23,7 +23,7 @@ def create_user(db: Session, user: UserCreate):
 
     # Create the database model instance
     db_user = User(
-        username=user.username, 
+        user_name=user.user_name, 
         email=user.email, 
         hashed_password=hashed_password
     )
