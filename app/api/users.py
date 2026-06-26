@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app.db.database import get_db
-from app.schema.user import UserCreate, UserResponse
+from app.schemas.user import UserCreate, UserResponse
 from app.services import user as user_service
 
 # Create a router specifically for user-related endpoints

@@ -6,6 +6,7 @@ from fastapi import FastAPI
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Blog API")
+Base.metadata.create_all(bind=engine)
 
 # Register the router
 app.include_router(users.router)
