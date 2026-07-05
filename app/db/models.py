@@ -17,14 +17,14 @@ class User(Base):
 
     posts = relationship("Post", back_populates="author") 
 
-
+ 
 class Post(Base):
     __tablename__ = "posts"
 
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String, index=True)
     content = Column(Text)
-    created_at = Column(DateTime, default=lambda: int(datetime.now(timezone.utc).timestamp()))
+    created_at = Column(Integer, default=lambda: int(datetime.now(timezone.utc).timestamp()))
     
     # Foreign Key linking to the User table
     author_id = Column(String(36), ForeignKey("users.user_id"))

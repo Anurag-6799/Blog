@@ -1,6 +1,6 @@
 from app.db.database import engine, Base
 from app.db import models
-from app.api import users
+from app.api import users, posts
 from fastapi import FastAPI
 
 Base.metadata.create_all(bind=engine)
@@ -10,6 +10,7 @@ Base.metadata.create_all(bind=engine)
 
 # Register the router
 app.include_router(users.router)
+app.include_router(posts.router)
 
 @app.get("/")
 def root():
