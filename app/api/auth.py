@@ -6,7 +6,6 @@ from app.db.models import User
 from app.services.auth import verify_password, generate_token
 
 
-
 router = APIRouter(tags=["Authentication"])
 
 @router.post('/login')
