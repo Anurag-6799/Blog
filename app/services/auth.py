@@ -33,7 +33,7 @@ def create_access_token(data: dict) -> str:
     """Takes a dictionary of user data and encodes it into a JWT."""
     to_encode = data.copy()
     
-    # Calculate the expiration time (current UTC time + 60 minutes)
+    # Calculate the expiration time (current UTC time + X minutes)
     expire = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({"exp": expire})
     
