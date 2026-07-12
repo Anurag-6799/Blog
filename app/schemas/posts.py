@@ -15,3 +15,6 @@ class PostResponse(BaseModel):
     class Config:
         from_attributes = True
 
+class PostUpdate(BaseModel):
+    title: Optional[str] = Field(None, min_length=1, max_length=100)
+    content: Optional[str] = None

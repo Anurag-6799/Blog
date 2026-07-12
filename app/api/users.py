@@ -7,7 +7,7 @@ from app.services import user as user_service
 # Create a router specifically for user-related endpoints
 router = APIRouter(prefix="/users", tags=["Users"])
 
-@router.post("/", response_model=UserResponse)
+@router.post("/register", response_model=UserResponse)
 def create_user_endpoint(user: UserCreate, db: Session = Depends(get_db)):
     """
     Create a new user. 
